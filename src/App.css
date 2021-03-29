@@ -1,0 +1,160 @@
+.App {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.glass {
+    min-height: 80vh;
+    width: 80%;
+    z-index: 5;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+}
+
+.circle {
+    width: 15rem;
+    height: 15rem;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.25)
+    );
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 4;
+}
+
+.circle-1 {
+    top: 60%;
+    left: 2%;
+}
+.circle-2 {
+    top: 2%;
+    right: 5%;
+}
+
+/*----------------------- Sidebar ------------*/
+
+.sidebar {
+    min-width: 150px;
+    padding: 1rem;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar_profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar_profile img {
+    width: 65px;
+}
+
+.sidebar_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar_menu-item {
+    padding: 10px 0px;
+    margin-bottom: 5px;
+}
+
+.box {
+    border-radius: 0.75rem;
+    background: rgba(251, 255, 254, 0.822);
+    box-shadow: 2px 2px 15px 5px rgba(29, 182, 174, 0.46);
+    -webkit-box-shadow: 2px 2px 15px 5px rgba(29, 182, 174, 0.46);
+    -moz-box-shadow: 2px 2px 15px 5px rgba(29, 182, 174, 0.46);
+}
+
+@media only screen and (max-width: 770px) {
+    .glass {
+        width: 100%;
+        height: 95vh;
+        flex-direction: column-reverse;
+    }
+
+    .sidebar {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .version {
+        display: none;
+    }
+    .sidebar_menu {
+        display: flex;
+        flex-grow: 3;
+    }
+    .sidebar_menu-box {
+        flex-grow: 1;
+    }
+
+    .sidebar_menu {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-right: 3rem;
+    }
+    .sidebar_profile img {
+        width: 50px;
+    }
+}
+
+.fadeToDoDel {
+    color: lightcoral !important;
+    text-decoration: line-through;
+    animation: fadeDel 1.1s;
+}
+
+.fadeToDoCom {
+    color: rgb(54, 194, 147) !important;
+    text-decoration: line-through;
+    animation: fadeCom 1.1s;
+}
+
+@keyframes fadeDel {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeCom {
+    from {
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
