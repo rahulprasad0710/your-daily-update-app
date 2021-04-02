@@ -6,6 +6,7 @@ import Introbox from "../component/Introbox";
 import Sidebar from "../component/Sidebar/Sidebar";
 import Todo from "../component/ToDoAll/Todo";
 import Weatherbox2 from "../component/Weatherbox2";
+import NewsBox from "../component/NewsBox";
 
 const Main2 = () => {
     return (
@@ -18,6 +19,9 @@ const Main2 = () => {
                     </Route>
                     <Route exact path="/corona">
                         <CoronaBox />
+                    </Route>
+                    <Route exact path="/news">
+                        <NewsBox />
                     </Route>
                     <Route path="/weather">
                         <Weatherbox2 />

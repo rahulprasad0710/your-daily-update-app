@@ -42,6 +42,13 @@ const WeatherBox = () => {
                     <h5 className="text-center text-info text">
                         {weatherData.data.current.temperature}℃
                     </h5>
+                    <img
+                        className="weatherIcon"
+                        src={weatherData.data.current.weather_icons.map(
+                            (icon) => icon
+                        )}
+                        alt=""
+                    />
                     <h5 className="text-center text-info ">
                         {weatherData.data.location.name} ,
                     </h5>

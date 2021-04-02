@@ -1,5 +1,5 @@
 import Layout from "./Layout/Layout";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import CountUp from "react-countup";
 import useFetchData from "./useFetchData";
 import coronaImg from "./images/covid-19 (1).png";
@@ -23,7 +23,7 @@ const CoronaBox = () => {
 
     return (
         <Layout>
-            <h5 className="text-center text-info">Corona Update</h5>
+            <h5 className="text-center text-info mb-4">Corona Update</h5>
             <div className="row justify-content-around">
                 <div className="worldwide col-sm-4">
                     <div className="h5 text-dark text-center">World Wide</div>

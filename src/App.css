@@ -26,6 +26,12 @@
     -webkit-backdrop-filter: blur(14px);
     display: flex;
 }
+
+.weatherIcon {
+    background: transparent;
+    filter: brightness(1);
+    border-radius: 50%;
+}
 .todosbox {
     height: 100%;
     display: flex;
