@@ -1,5 +1,5 @@
 import Layout from "./Layout/Layout";
-
+import { Line, Bar } from "react-chartjs-2";
 import CountUp from "react-countup";
 import useFetchData from "./useFetchData";
 
@@ -8,8 +8,16 @@ const CoronaBox = () => {
         "https://api.covid19api.com/summary"
     );
     if (coronaData) {
+        console.log(coronaData.data);
         console.log(coronaData.data.Countries[120]);
         var nepalData = coronaData.data.Countries[120];
+    }
+
+    const { fetchData: recordData, isLoading: isGraph } = useFetchData(
+        "https://api.covid19api.com/total/dayone/country/nepal"
+    );
+    if (recordData) {
+        console.log(recordData.data);
     }
 
     return (
@@ -120,6 +128,50 @@ const CoronaBox = () => {
                         )}
                     </h6>
                 </div>
+            </div>
+
+            <div className="chart-container">
+                {isGraph && <span className="text-danger">Loading.... </span>}
+                {recordData && (
+                    <Line
+                        data={{
+                            labels: recordData.data.map((eachdata) => {
+                                var t = new Date(eachdata.Date);
+                                var date = t.toDateString();
+                                return date;
+                            }),
+                            datasets: [
+                                {
+                                    data: recordData.data.map(
+                                        (eachdata) => eachdata.Confirmed
+                                    ),
+                                    label: "Confirmed",
+                                    borderWidth: 1,
+                                    borderColor: "#3333ff",
+                                    fill: true,
+                                },
+                                {
+                                    data: recordData.data.map(
+                                        (eachdata) => eachdata.Recovered
+                                    ),
+                                    label: "Recovered",
+                                    borderWidth: 1,
+                                    borderColor: "#57C884",
+                                    fill: true,
+                                },
+                                {
+                                    data: recordData.data.map(
+                                        (eachdata) => eachdata.Deaths
+                                    ),
+                                    label: "Deaths",
+                                    borderWidth: 1,
+                                    borderColor: "#F14520",
+                                    fill: true,
+                                },
+                            ],
+                        }}
+                    />
+                )}
             </div>
         </Layout>
     );

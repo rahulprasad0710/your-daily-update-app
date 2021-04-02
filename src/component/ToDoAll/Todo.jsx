@@ -72,7 +72,7 @@ const Todo = () => {
                     toDoList={toDoList}
                     setToDoList={setToDoList}
                 />
-                <div>
+                <div className="septodo">
                     <div className="form-group ">
                         <select
                             onChange={filterToDoStatus}
