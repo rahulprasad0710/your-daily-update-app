@@ -1,3 +1,5 @@
+import Layout from "./Layout/Layout";
+
 import CountUp from "react-countup";
 import useFetchData from "./useFetchData";
 
@@ -11,7 +13,7 @@ const CoronaBox = () => {
     }
 
     return (
-        <div className="coronabox col-md-7 box ">
+        <Layout>
             <h5 className="text-center text-info">Corona Update</h5>
             <div className="row">
                 <div className="worldwide col-sm-6">
@@ -119,7 +121,7 @@ const CoronaBox = () => {
                     </h6>
                 </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 

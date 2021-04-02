@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Layout from "../Layout/Layout";
 import Form from "./Form";
 import TodoList from "./TodoList";
 
@@ -64,34 +65,34 @@ const Todo = () => {
     };
 
     return (
-        <div
-            className="todosbox col-md-6 box pt-3 mb-2 "
-            style={{ minHeight: "300px" }}
-        >
-            <Form
-                oneInputToDo={oneInputToDo}
-                toDoList={toDoList}
-                setOneInputToDo={setOneInputToDo}
-                setToDoList={setToDoList}
-            />
-            <div class="form-group">
-                <select
-                    onChange={filterToDoStatus}
-                    class="form-control"
-                    id="exampleFormControlSelect1"
-                >
-                    <option value="all">All</option>
-                    <option value="completed">Completed</option>
-                    <option value="uncomplete">Uncomplete</option>
-                </select>
+        <Layout>
+            <div className="todosbox ">
+                <TodoList
+                    filteredToDoList={filteredToDoList}
+                    toDoList={toDoList}
+                    setToDoList={setToDoList}
+                />
+                <div>
+                    <div className="form-group ">
+                        <select
+                            onChange={filterToDoStatus}
+                            className="form-control"
+                            id="exampleFormControlSelect1"
+                        >
+                            <option value="all">All</option>
+                            <option value="completed">Completed</option>
+                            <option value="uncomplete">Uncomplete</option>
+                        </select>
+                    </div>
+                    <Form
+                        oneInputToDo={oneInputToDo}
+                        toDoList={toDoList}
+                        setOneInputToDo={setOneInputToDo}
+                        setToDoList={setToDoList}
+                    />
+                </div>
             </div>
-
-            <TodoList
-                filteredToDoList={filteredToDoList}
-                toDoList={toDoList}
-                setToDoList={setToDoList}
-            />
-        </div>
+        </Layout>
     );
 };
 

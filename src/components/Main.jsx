@@ -10,7 +10,7 @@ import Weatherbox2 from "../component/Weatherbox2";
 const Main2 = () => {
     return (
         <div className="container main-container">
-            <section className="glass justify-content-between">
+            <section className="glass">
                 <Sidebar />
                 <Switch>
                     <Route exact path="/">

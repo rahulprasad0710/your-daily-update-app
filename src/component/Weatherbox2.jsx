@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Layout from "./Layout/Layout";
 import axios from "axios";
 const WeatherBox = () => {
     const [weatherData, setData] = useState(null);
@@ -29,7 +30,7 @@ const WeatherBox = () => {
     console.log(weatherData);
 
     return (
-        <div className="weatherbox col-md-2 d-flex justify-content-center align-items-center box p-2 mb-2">
+        <Layout className="weatherbox">
             {isLoading && (
                 <div className="d-flex justify-content-center align-items-center">
                     <p className="spinner-border text-info" role="status"></p>{" "}
@@ -49,7 +50,7 @@ const WeatherBox = () => {
                     </h5>{" "}
                 </div>
             )}
-        </div>
+        </Layout>
     );
 };
 
