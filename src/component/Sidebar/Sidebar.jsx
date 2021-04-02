@@ -54,7 +54,7 @@ const Sidebar = () => {
             </div>
             <div className="version">
                 <h6 className="text-center text-info"> &#169; Rahul </h6>
-                <h6 className="text-center text-info">V :1.2.0 </h6>
+                <h6 className="text-center text-info">V: 1.2.0 </h6>
             </div>
         </div>
     );

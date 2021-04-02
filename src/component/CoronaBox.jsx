@@ -2,6 +2,7 @@ import Layout from "./Layout/Layout";
 import { Line, Bar } from "react-chartjs-2";
 import CountUp from "react-countup";
 import useFetchData from "./useFetchData";
+import coronaImg from "./images/covid-19 (1).png";
 
 const CoronaBox = () => {
     const { fetchData: coronaData, isLoading } = useFetchData(
@@ -23,8 +24,8 @@ const CoronaBox = () => {
     return (
         <Layout>
             <h5 className="text-center text-info">Corona Update</h5>
-            <div className="row">
-                <div className="worldwide col-sm-6">
+            <div className="row justify-content-around">
+                <div className="worldwide col-sm-4">
                     <div className="h5 text-dark text-center">World Wide</div>
                     <h6 className="text-info text-center">
                         Total Death :
@@ -76,7 +77,12 @@ const CoronaBox = () => {
                         )}
                     </h6>
                 </div>
-                <div className="country col-sm-6  ">
+
+                <div className="coronaImgBox col-sm-2">
+                    <img src={coronaImg} width="100px" alt="logoImage" />
+                </div>
+
+                <div className="country col-sm-4  ">
                     <div className="h5 text-dark text-center  ">Nepal</div>
                     <h6 className="text-info text-center">
                         Total Death :
