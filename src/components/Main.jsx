@@ -1,4 +1,6 @@
 // import logo from "../imgg/raul.jpg";
+import { Switch, Route } from "react-router-dom";
+
 import CoronaBox from "../component/CoronaBox";
 import Introbox from "../component/Introbox";
 import Sidebar from "../component/Sidebar/Sidebar";
@@ -8,8 +10,22 @@ import Weatherbox2 from "../component/Weatherbox2";
 const Main2 = () => {
     return (
         <div className="container main-container">
-            <section className="glass">
+            <section className="glass justify-content-between">
                 <Sidebar />
+                <Switch>
+                    <Route exact path="/">
+                        <Introbox />
+                    </Route>
+                    <Route exact path="/corona">
+                        <CoronaBox />
+                    </Route>
+                    <Route path="/weather">
+                        <Weatherbox2 />
+                    </Route>
+                    <Route path="/todo">
+                        <Todo />
+                    </Route>
+                </Switch>
             </section>
             <div className="circle circle-1"></div>
             <div className="circle circle-2"></div>

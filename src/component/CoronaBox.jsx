@@ -11,7 +11,7 @@ const CoronaBox = () => {
     }
 
     return (
-        <div className="coronabox col-md-6 box mb-2">
+        <div className="coronabox col-md-7 box ">
             <h5 className="text-center text-info">Corona Update</h5>
             <div className="row">
                 <div className="worldwide col-sm-6">
