@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Layout from "./Layout/Layout";
 import { Line } from "react-chartjs-2";
 import CountUp from "react-countup";
@@ -5,6 +7,7 @@ import useFetchData from "./useFetchData";
 import coronaImg from "./images/covid-19 (1).png";
 
 const CoronaBox = () => {
+    const [country, setCountry] = useState("nepal");
     const { fetchData: coronaData, isLoading } = useFetchData(
         "https://api.covid19api.com/summary"
     );
@@ -14,8 +17,13 @@ const CoronaBox = () => {
         var nepalData = coronaData.data.Countries[120];
     }
 
+    const handleChange = (e) => {
+        setCountry(e.target.value);
+        console.log(e.target.value);
+    };
+
     const { fetchData: recordData, isLoading: isGraph } = useFetchData(
-        "https://api.covid19api.com/total/dayone/country/nepal"
+        `https://api.covid19api.com/total/dayone/country/${country}`
     );
     if (recordData) {
         console.log(recordData.data);
@@ -136,6 +144,14 @@ const CoronaBox = () => {
                 </div>
             </div>
 
+            <div className="form-group ">
+                <select onChange={handleChange} id="exampleFormControlSelect1">
+                    <option value="nepal">Nepal</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="china">China</option>
+                </select>
+            </div>
             <div className="chart-container">
                 {isGraph && <span className="text-danger">Loading.... </span>}
                 {recordData && (
